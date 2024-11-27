@@ -1,0 +1,4 @@
+Creamos el proyecto con react
+>npx create-react-app inventory-app
+Se instala el react router dom
+npm install axios react-router-dom
