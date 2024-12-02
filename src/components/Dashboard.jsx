@@ -1,11 +1,22 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css"; // Asegúrate de importar los estilos comunes
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  // Función para manejar el cierre de sesión
+  const handleLogout = () => {
+    // Elimina el token o cualquier dato de sesión almacenado (localStorage, cookies, etc.)
+    localStorage.removeItem("authToken"); // Esto depende de cómo estés manejando la autenticación
+
+    // Redirige al usuario a la página de inicio de sesión
+    navigate("/login");
+  };
+
   return (
     <div className="dashboard-wrapper">
-      {/* Barra de Navegación a la izquierda */}
+      {/* Barra de Navegación */}
       <div className="dashboard-nav">
         <ul>
           <li>
@@ -29,6 +40,11 @@ const Dashboard = () => {
             </Link>
           </li>
         </ul>
+
+        {/* Botón de Cerrar Sesión */}
+        <button className="section-button" onClick={handleLogout}>
+          Cerrar sesión
+        </button>
       </div>
 
       {/* Contenido Central */}

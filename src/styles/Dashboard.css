@@ -38,6 +38,23 @@
   background-color: #34495e;
 }
 
+/* Botón de Cerrar sesión */
+.section-button {
+  background-color: #e74c3c; /* Rojo para indicar el cierre de sesión */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 20px; /* Aseguramos que el botón no quede pegado a los links */
+}
+
+.section-button:hover {
+  background-color: #c0392b; /* Rojo oscuro para el hover */
+}
+
 /* Contenido Central */
 .dashboard-content {
   margin-left: 240px; /* Para dejar espacio a la barra lateral */
@@ -73,19 +90,4 @@
 .section-card p {
   font-size: 16px;
   color: #666;
-}
-
-.section-button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.section-button:hover {
-  background-color: #2980b9;
 }
