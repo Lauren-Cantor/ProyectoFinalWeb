@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>Gestión de Inventarios</h1>
+        <h1 style={{ textAlign: 'center' }}>Gestión de Inventarios</h1>
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

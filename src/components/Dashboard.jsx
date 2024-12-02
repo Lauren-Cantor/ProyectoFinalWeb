@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../configurations/axios';
+import '../styles/Dashboard.css'
 
 const Dashboard = () => {
     const [products, setProducts] = useState([]);
@@ -19,13 +20,13 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div>
-            <h2>Dashboard</h2>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <h3>Productos</h3>
-            <ul>
+        <div className="dashboard-container">
+            <h2 className="dashboard-title">Dashboard</h2>
+            {error && <p className="error-message">{error}</p>}
+            <h3 className="dashboard-title">Productos</h3>
+            <ul className="product-list">
                 {products.map((product) => (
-                    <li key={product.id}>
+                    <li key={product.id} className="product-list-item">
                         {product.product_code} - {product.description}
                     </li>
                 ))}

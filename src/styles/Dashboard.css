@@ -1,0 +1,30 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-list-item {
+  background-color: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
