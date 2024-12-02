@@ -1,38 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from '../configurations/axios';
-import '../styles/Dashboard.css'
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import "../styles/Dashboard.css"; // Asegúrate de importar los estilos comunes
 
 const Dashboard = () => {
-    const [products, setProducts] = useState([]);
-    const [error, setError] = useState('');
+  return (
+    <div className="dashboard-wrapper">
+      {/* Barra de Navegación a la izquierda */}
+      <div className="dashboard-nav">
+        <ul>
+          <li>
+            <Link to="/dashboard/productos" className="nav-link">
+              Productos
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard/usuarios" className="nav-link">
+              Usuarios
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard/movimientos" className="nav-link">
+              Movimientos
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard/materiales" className="nav-link">
+              Materiales
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await axios.get('/productos');
-                setProducts(response.data);
-            } catch (err) {
-                setError('Error al obtener productos');
-            }
-        };
-
-        fetchProducts();
-    }, []);
-
-    return (
-        <div className="dashboard-container">
-            <h2 className="dashboard-title">Dashboard</h2>
-            {error && <p className="error-message">{error}</p>}
-            <h3 className="dashboard-title">Productos</h3>
-            <ul className="product-list">
-                {products.map((product) => (
-                    <li key={product.id} className="product-list-item">
-                        {product.product_code} - {product.description}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+      {/* Contenido Central */}
+      <div className="dashboard-content">
+        <Outlet />
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;
