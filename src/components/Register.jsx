@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import axios from "../configurations/axios";
 import "../styles/Register.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("employee");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,7 +61,11 @@ const Register = () => {
         <button type="submit" className="submit-button">
           Registrarse
         </button>
+        <hr />
       </form>
+      <button className="submit-button" onClick={handleLogin}>
+        Volver al login
+      </button>
     </div>
   );
 };

@@ -25,6 +25,10 @@ const Login = () => {
     }
   };
 
+  const handleRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <div className="login-container">
       <h2 className="login-title">Iniciar sesión</h2>
@@ -47,7 +51,11 @@ const Login = () => {
         <button type="submit" className="submit-button">
           Iniciar sesión
         </button>
+        <hr />
       </form>
+      <button className="submit-button" onClick={handleRegister}>
+        Registrar
+      </button>
     </div>
   );
 };
